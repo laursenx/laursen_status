@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #141517 !important;
+  background-image: url("/background.png");
+  background-size: 15%;
+  font-family: unset !important;
+}
