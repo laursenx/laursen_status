@@ -8,7 +8,7 @@ export const fivemRouter = createTRPCRouter({
 
     const averagePing =
       clients > 0
-        ? players.reduce((acc, cur) => acc + cur.ping, 0) / clients
+        ? (players.reduce((acc, cur) => acc + cur.ping, 0) / clients).toFixed(0)
         : 0;
 
     let restartPlan = process.env.RESTART_PLAN!;
