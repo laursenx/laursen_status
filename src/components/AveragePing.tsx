@@ -7,7 +7,7 @@ import { IconWifi } from "@tabler/icons-react";
 
 // Types
 type PingProps = {
-  ping: number | undefined;
+  ping: string | undefined;
   isLoading: boolean;
   isError: boolean;
   status: string | undefined;
@@ -29,9 +29,10 @@ export default function AveragePing(pingProps: PingProps) {
 
   useEffect(() => {
     if (ping) {
-      if (ping < 60) {
+      const pingInt = parseInt(ping);
+      if (pingInt < 60) {
         setPingState("good");
-      } else if (ping >= 60 && ping <= 75) {
+      } else if (pingInt >= 60 && pingInt <= 75) {
         setPingState("medium");
       } else {
         setPingState("bad");
